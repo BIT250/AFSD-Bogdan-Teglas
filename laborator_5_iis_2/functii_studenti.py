@@ -3,4 +3,7 @@ def in_binar(n: int) -> str:
     while n > 0:
         res = str(n & 1) + res
         n >>= 1
-    return res
+    return res.zfill(8)
+
+
+print(in_binar(2))
