@@ -1,3 +1,11 @@
+def in_binar(n: int) -> str:
+    res = ''  # binary result
+    while n > 0:
+        res = str(n & 1) + res
+        n >>= 1
+    return res.zfill(8)
+
+
 #13. cel_mai_frecvent_cuvant(text: str) -> str
 #Determină cuvântul cu cea mai mare frecvență (separare după spații).
 #dacă nu există cuvinte, mesaj corespunzător.
