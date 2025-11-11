@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 def lista_prime_pana_la(n: int) -> str:
     if not isinstance(n, int) or n < 2:
         return "Eroare: introduceți un număr întreg mai mare sau egal cu 2."
@@ -15,19 +14,14 @@ def lista_prime_pana_la(n: int) -> str:
         return f"Numere prime până la {n}: {', '.join(prime)}"
     else:
         return f"Nu există numere prime până la {n}."
-print(lista_prime_pana_la(2))
-print(lista_prime_pana_la(3))
-=======
-lista=[1,2,7,4,8,4]
-elimina_duplicate(lista:list[int]
+
 def cmmdc(a, b):
     if a == 0 and b == 0:
         return "Eroare:CMMDC(0, 0) nu este definit."
     while b!= 0:
         a, b = b, a % b
     return a
-print(f"CMMDC(12, 18) = {cmmdc(12, 18)}")
-print( cmmdc(0, 0,))
+
 def produs_scalar(v1, v2)-> str:
     suma=0
     if len(v1)!=len(v2):
@@ -39,7 +33,6 @@ def produs_scalar(v1, v2)-> str:
         suma+=produs
     return f"Produsul scalar este {produs}"
 
-lista=[2,3,4,5,6,5,4,2,6]
 def numar_unic(lista: list[int]):
     def bubble_sort_baza(lista):
         n = len(lista)
@@ -67,4 +60,3 @@ def timp_in_format(secunde: int) -> str:
     ss=f"{secunde_ramase:02d}"
     timp_format=f"{hh}:{mm}:{ss}"
     return f"{secunde} secunde inseamna {timp_format}."
->>>>>>> 5d65cd7903042ae37fa40a5316781105fe7c89df
