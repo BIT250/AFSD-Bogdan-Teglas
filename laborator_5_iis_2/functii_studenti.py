@@ -68,4 +68,12 @@ def cmmdc (a,b) -> str:
     if (a,b) == (0,0):
         return 'err'
     if (a,b) != (0,0):
-        return cmmdc (a,b)
+        # algoritmul lui euclid
+        while b!=a:
+            if a>b:
+                a=a-b
+            else:
+                b=b-a
+    return f"cmmdc este {a}"
+
+print(cmmdc(20,30))
