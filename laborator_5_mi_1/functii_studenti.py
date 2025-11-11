@@ -1,2 +1,3 @@
-lista=[1,2,7,4,8,4]
-elimina_duplicate(lista:list[int]
+def elimina_duplicate(lista):
+    elemente_unice = set(lista)
+    return elemente_unice
