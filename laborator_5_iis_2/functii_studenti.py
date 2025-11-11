@@ -6,4 +6,3 @@ def in_binar(n: int) -> str:
     return res.zfill(8)
 
 
-print(in_binar(2))
