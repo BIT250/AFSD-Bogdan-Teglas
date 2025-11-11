@@ -8,6 +8,17 @@ def cmmdc(a, b):
     return a
 print(f"CMMDC(12, 18) = {cmmdc(12, 18)}")
 print( cmmdc(0, 0,))
+def produs_scalar(v1, v2)-> str:
+    suma=0
+    if len(v1)!=len(v2):
+        return "Eroare, vectorii nu au aceeasi lungime."
+    i=0
+    while i<len(v1):
+        produs = (v1[i] * v2[i])
+        i+=1
+        suma+=produs
+    return f"Produsul scalar este {produs}"
+
 lista=[2,3,4,5,6,5,4,2,6]
 def numar_unic(lista: list[int]):
     def bubble_sort_baza(lista):
@@ -36,14 +47,3 @@ def timp_in_format(secunde: int) -> str:
     ss=f"{secunde_ramase:02d}"
     timp_format=f"{hh}:{mm}:{ss}"
     return f"{secunde} secunde inseamna {timp_format}."
-    while i < len(lista) - 1:
-        if (i == 0 and lista[i] != lista[i + 1]) or \
-           (i == len(lista) - 2 and lista[i + 1] != lista[i]) or \
-           (lista[i] != lista[i - 1] and lista[i] != lista[i + 1]):
-            return lista[i]
-        i += 1
-
-    print("Nu exista un numar unic")
-
-if __name__ == '__main__':
-    print(numar_unic(lista))
