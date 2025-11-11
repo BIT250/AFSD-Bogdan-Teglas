@@ -63,3 +63,9 @@ def filtreaza_pare(lista: list[int]) -> str:
             text += ", "
     return text
 #lista = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+def cmmdc (a,b) -> str:
+    if (a,b) == (0,0):
+        return 'err'
+    if (a,b) != (0,0):
+        return cmmdc (a,b)
