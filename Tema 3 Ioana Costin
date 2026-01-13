@@ -1,0 +1,113 @@
+#Realizați un program în Python care implementează jocul X și 0 folosind o matrice 3×3 și un număr de funcții.
+# 1. Reprezentarea tablei
+# Tabla este o matrice 3×3.
+# O celulă liberă este marcată cu un caracter ales (de ex. . sau spațiu).
+# Jocul începe cu tabla goală și cu jucătorul X.
+# 2. Funcții obligatorii
+# a) afiseaza(tabla)
+# Afișează tabla 3×3 într-un format lizibil.
+# b) citeste_mutare(tabla, jucator)
+# Afișează mesajul de cerere a coordonatelor pentru jucătorul curent.
+# Citește linia și coloana.
+# Validează coordonatele și faptul că poziția este liberă.
+# Dacă datele sunt invalide, afișează mesaj de eroare și cere din nou.
+# Returnează o mutare validă (linie, coloană).
+# c) stare_joc(tabla)
+# Verifică tabla și returnează starea curentă a jocului, astfel:
+# "X" dacă X a câștigat,
+# "O" dacă O a câștigat,
+# "EGAL" dacă tabla este plină și nu există câștigător,
+# "CONTINUA" dacă jocul nu s-a terminat.
+# Verificările trebuie să includă: cele 3 linii, cele 3 coloane și cele 2 diagonale.
+# 3. Bucla principală
+# Inițializați tabla goală și setați jucătorul curent la X.
+# Rulați un ciclu în care:
+# afișați tabla,
+# obțineți o mutare validă cu citeste_mutare(...),
+# actualizați matricea cu simbolul jucătorului,
+# verificați stare_joc(tabla) și opriți jocul dacă nu mai este "CONTINUA",
+# dacă jocul continuă, schimbați jucătorul (X ↔ O).
+# La final, afișați tabla și un mesaj corespunzător rezultatului.
+# a) afiseaza(tabla)
+
+def afiseaza(tabla):
+    for linie in tabla:
+        print(" ".join(linie))
+    print()
+
+
+
+#b) citeste_mutare(tabla, jucator)
+def citeste_mutare(tabla, jucator):
+    while True:
+        try:
+            linie = int(input(f"Jucator {jucator}, introdu linia (0-2): "))
+            coloana = int(input(f"Jucator {jucator}, introdu coloana (0-2): "))
+
+            if linie < 0 or linie > 2 or coloana < 0 or coloana > 2:
+                print("Coordonate invalide! Introdu valori intre 0 si 2.")
+            elif tabla[linie][coloana] != ".":
+                print("Pozitia nu este libera! Alege alta.")
+            else:
+                return linie, coloana
+        except ValueError:
+            print("Introdu doar numere intregi!")
+
+#c) stare_joc(tabla)
+def stare_joc(tabla):
+    # verificare linii
+    for i in range(3):
+        if tabla[i][0] == tabla[i][1] == tabla[i][2] != ".":
+            return tabla[i][0]
+
+    # verificare coloane
+    for j in range(3):
+        if tabla[0][j] == tabla[1][j] == tabla[2][j] != ".":
+            return tabla[0][j]
+
+    # verificare diagonale
+    if tabla[0][0] == tabla[1][1] == tabla[2][2] != ".":
+        return tabla[0][0]
+
+    if tabla[0][2] == tabla[1][1] == tabla[2][0] != ".":
+        return tabla[0][2]
+
+    # verificare egal
+    for linie in tabla:
+        if "." in linie:
+            return "CONTINUA"
+
+    return "EGAL"
+
+# 3.Bucla principală a jocului
+def main():
+    tabla = [
+        [".", ".", "."],
+        [".", ".", "."],
+        [".", ".", "."]
+    ]
+
+    jucator = "X"
+
+    while True:
+        afiseaza(tabla)
+
+        linie, coloana = citeste_mutare(tabla, jucator)
+        tabla[linie][coloana] = jucator
+
+        stare = stare_joc(tabla)
+        if stare != "CONTINUA":
+            afiseaza(tabla)
+            if stare == "EGAL":
+                print("Jocul s-a terminat la egal!")
+            else:
+                print(f"Jucatorul {stare} a castigat!")
+            break
+
+        # schimbare jucator
+        if jucator == "X":
+            jucator = "O"
+        else:
+            jucator = "X"
+
+main()

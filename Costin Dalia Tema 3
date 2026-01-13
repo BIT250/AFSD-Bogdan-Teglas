@@ -1,0 +1,49 @@
+def afiseaza(tabla):
+    for linie in tabla:
+        print(" ".join(linie))
+    print()
+
+
+def citeste_mutare(tabla, j):
+    while True:
+        l = int(input(f"Jucator {j}, linia (0-2): "))
+        c = int(input(f"Jucator {j}, coloana (0-2): "))
+        if 0 <= l <= 2 and 0 <= c <= 2 and tabla[l][c] == '.':
+            return l, c
+        print("Mutare invalida!")
+
+
+def stare_joc(t):
+    for i in range(3):
+        if t[i][0] == t[i][1] == t[i][2] != '.':
+            return t[i][0]
+        if t[0][i] == t[1][i] == t[2][i] != '.':
+            return t[0][i]
+
+    if t[0][0] == t[1][1] == t[2][2] != '.':
+        return t[0][0]
+    if t[0][2] == t[1][1] == t[2][0] != '.':
+        return t[0][2]
+
+    return "CONTINUA" if any('.' in linie for linie in t) else "EGAL"
+
+
+def joc():
+    t = [['.' for _ in range(3)] for _ in range(3)]
+    j = 'X'
+
+    while True:
+        afiseaza(t)
+        l, c = citeste_mutare(t, j)
+        t[l][c] = j
+
+        s = stare_joc(t)
+        if s != "CONTINUA":
+            afiseaza(t)
+            print("Egalitate!" if s == "EGAL" else f"Castigator: {s}")
+            break
+
+        j = 'O' if j == 'X' else 'X'
+
+
+joc()
