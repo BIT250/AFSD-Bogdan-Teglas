@@ -7,7 +7,7 @@ def initializare_glosar():
     Inițializează glosarul cu câțiva termeni exemplu.
     """
     return {
-        "variabilă": {
+        "variabila": {
             "definitie": "nume asociat unei valori",
             "categorie": "fundamente",
             "exemplu": "x = 10"
@@ -311,10 +311,8 @@ def ruleaza_aplicatia():
         elif optiune == "0":
             print("Programul s-a închis.")
             break
-
         else:
             print("Eroare: opțiune invalidă. Încercați din nou.")
-
 
 if __name__ == "__main__":
     ruleaza_aplicatia()

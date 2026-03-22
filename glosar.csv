@@ -1,0 +1,4 @@
+termen,definitie,categorie,exemplu
+variabila,nume asociat unei valori,fundamente,x = 10
+dicționar,structură de date bazată pe perechi cheie-valoare,structuri de date,"{'a': 1, 'b': 2}"
+list,colectie ordonata de elemente,structuri de date,"[1,2,3]"
