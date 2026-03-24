@@ -1,0 +1,7 @@
+======== BON FISCAL ========
+espres | cantitate: 10 | pret unitar: 8.00 lei | subtotal: 80.00 lei
+----------------------------
+Total: 80.00 lei
+Reducere: 0.00 lei
+Total final: 80.00 lei
+============================
