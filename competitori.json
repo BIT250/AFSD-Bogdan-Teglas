@@ -1,18 +1,8 @@
 [
   {
-    "nume": "Andrei Popescu",
-    "punctaj": 95,
-    "timp": 118
-  },
-  {
-    "nume": "Maria Ionescu",
-    "punctaj": 95,
-    "timp": 115
-  },
-  {
-    "nume": "Vlad Dumitru",
-    "punctaj": 88,
-    "timp": 120
+    "nume": "alin",
+    "punctaj": 115,
+    "timp": 95
   },
   {
     "nume": "Ana Matei",
@@ -23,5 +13,20 @@
     "nume": "Anca Pavel",
     "punctaj": 100,
     "timp": 110
+  },
+  {
+    "nume": "Maria Ionescu",
+    "punctaj": 95,
+    "timp": 115
+  },
+  {
+    "nume": "Andrei Popescu",
+    "punctaj": 95,
+    "timp": 118
+  },
+  {
+    "nume": "Vlad Dumitru",
+    "punctaj": 88,
+    "timp": 120
   }
 ]
