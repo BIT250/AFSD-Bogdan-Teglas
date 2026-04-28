@@ -3,9 +3,7 @@ import time
 import csv
 
 
-# =========================================================
 # CLASA PENTRU STATISTICI
-# =========================================================
 class Stats:
     def __init__(self):
         self.comparisons = 0
@@ -13,9 +11,7 @@ class Stats:
         self.recursive_calls = 0
 
 
-# =========================================================
 # BUBBLE SORT
-# =========================================================
 def bubble_sort(arr, stats):
     n = len(arr)
 
@@ -37,9 +33,7 @@ def bubble_sort(arr, stats):
     return arr
 
 
-# =========================================================
 # QUICK SORT
-# =========================================================
 def quick_sort(arr, stats):
     stats.recursive_calls += 1
 
@@ -67,9 +61,7 @@ def quick_sort(arr, stats):
     return quick_sort(left, stats) + middle + quick_sort(right, stats)
 
 
-# =========================================================
 # MERGE SORT
-# =========================================================
 def merge_sort(arr, stats):
     stats.recursive_calls += 1
 
@@ -114,9 +106,7 @@ def merge(left, right, stats):
     return result
 
 
-# =========================================================
 # FUNCȚII UTILE
-# =========================================================
 def is_sorted(arr):
     for i in range(len(arr) - 1):
         if arr[i] > arr[i + 1]:
@@ -140,9 +130,7 @@ def same_elements(a, b):
     return count_a == count_b
 
 
-# =========================================================
 # GENERAREA DATELOR
-# =========================================================
 def generate_random_list(n):
     return [random.randint(0, 100000) for _ in range(n)]
 
@@ -186,9 +174,7 @@ def generate_test_data(n, data_type):
         raise ValueError("Tip de intrare necunoscut.")
 
 
-# =========================================================
 # AFIȘAREA REZULTATELOR
-# =========================================================
 def print_results_table(results):
     header = (
         f"{'Algoritm':<12} {'Dimensiune':<10} {'Intrare':<20} "
@@ -234,9 +220,7 @@ def save_results_to_csv(results, filename="rezultate_sortari.csv"):
             ])
 
 
-# =========================================================
 # TESTAREA UNUI ALGORITM
-# =========================================================
 def run_single_test(algorithm_name, algorithm_function, original_data):
     stats = Stats()
     data_copy = original_data.copy()
@@ -250,9 +234,7 @@ def run_single_test(algorithm_name, algorithm_function, original_data):
     return result, execution_time, stats
 
 
-# =========================================================
 # PROGRAM PRINCIPAL
-# =========================================================
 def run_benchmark():
     random.seed(42)
 
